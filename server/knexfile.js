@@ -4,6 +4,6 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres:///scoresDatabase'
+    connection: 'postgres:///mushydb'
   },
 };
