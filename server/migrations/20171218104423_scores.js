@@ -21,7 +21,7 @@ exports.up = function(knex, Promise) {
     knex.schema.createTable('score', (table) => {
       table.increments('id').primary();
       table.integer('score');
-      table.integer('game_player_id').references('id').inTable('game_player')
+      table.integer('group_player_id').references('id').inTable('group_player')
     }),
   ])
 };
@@ -29,9 +29,9 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-        knex.schema.dropTable('player'),
-        knex.schema.dropTable('group'),
-        knex.schema.dropTable('game_player'),
-        knex.schema.dropTable('score'),
+        knex.schema.dropTableIfExists('score'),
+        knex.schema.dropTableIfExists('group_player'),
+        knex.schema.dropTableIfExists('player'),
+        knex.schema.dropTableIfExists('group'),
   ])
 };
