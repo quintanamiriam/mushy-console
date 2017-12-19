@@ -6,4 +6,8 @@ module.exports = {
     client: 'pg',
     connection: 'postgres:///mushydb'
   },
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL
+  }
 };
