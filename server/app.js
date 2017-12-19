@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(cors({origin: true}))
 
 app.use('/api/v1/teams', teams);
-app.use(express.static('./client/build'));
+app.use('/', express.static('./client/build'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

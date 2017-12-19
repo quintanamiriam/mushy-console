@@ -24,7 +24,7 @@ router.get('/:id', isValidId, (req, res, next) => {
     if (teams) {
       res.json(teams);
     } else {
-      next();
+      res.status(404).send({message: 'missing item'});
     }
   });
 });
