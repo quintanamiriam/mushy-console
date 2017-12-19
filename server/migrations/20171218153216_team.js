@@ -1,10 +1,10 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('group', (table) => {
+  return knex.schema.createTable('team', (table) => {
       table.increments('id').primary();
       table.text('title');
     })
 };
 
 exports.down = function(knex, Promise) {
-        knex.schema.dropTableIfExists('group')
+  return knex.schema.dropTableIfExists('team')
 };
